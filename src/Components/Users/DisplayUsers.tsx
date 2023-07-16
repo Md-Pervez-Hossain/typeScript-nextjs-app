@@ -1,5 +1,6 @@
 "use client";
 import { UserType } from "@/types/UserType";
+import Link from "next/link";
 import React from "react";
 
 const DisplayUsers = (user: UserType) => {
@@ -12,6 +13,9 @@ const DisplayUsers = (user: UserType) => {
         User Address:{" "}
         {`${user.address.city} ${user.address.street} ${user.address.zipcode}`}
       </h2>
+      <Link href={`/users/${user.id}`}>
+        <button>Details</button>
+      </Link>
     </div>
   );
 };
